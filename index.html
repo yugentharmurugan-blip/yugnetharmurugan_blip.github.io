@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Slides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ======================
+   GLOBAL STYLES
+====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.slide {
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    position: relative;
+    padding: 40px 0;
+
+    animation: fadeIn 1s ease;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.next-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+
+    background: linear-gradient(135deg, #ff8fb1, #ff4f8b);
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: none;
+
+    box-shadow:
+        0 8px 20px rgba(255, 79, 139, 0.45),
+        0 0 12px rgba(255, 182, 193, 0.4);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.next-btn:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 28px rgba(255, 79, 139, 0.6),
+        0 0 18px rgba(255, 182, 193, 0.6);
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ======================
+   ELEGANT TYPOGRAPHY
+====================== */
+
+body {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    color: #fff5f8;
+}
+
+/* Default paragraph text */
+p, label {
+    font-size: 1.1rem;
+    letter-spacing: 0.8px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Headings */
+h1, h2 {
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+/* Soft glow for text on dark backgrounds */
+#slide1 p,
+#slide3,
+#slide6 {
+    text-shadow:
+        0 0 12px rgba(255, 182, 193, 0.5),
+        0 0 22px rgba(255, 105, 180, 0.35);
+}
+
+/* ======================
+   STYLIZED CAPTIONS
+====================== */
+
+.caption {
+    margin-top: 18px;
+    padding: 8px 20px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    letter-spacing: 1.2px;
+
+    color: #3f3f3f;
+
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+
+    backdrop-filter: blur(6px);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.15),
+        0 0 12px rgba(255, 182, 193, 0.4);
+
+    animation: captionFloat 3.5s ease-in-out infinite;
+    
+}
+
+#slide2 .caption{
+    position: relative;
+    top: 150px;
+    left: 75px;
+}
+
+@keyframes captionFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+
+/* ======================
+   SLIDE 1
+====================== */
+#slide1 {
+    background: url("Slide1.jpg") center/cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#dog {
+    width: 500px;
+    cursor: pointer;
+}
+
+#slide1 p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+/* ======================
+   CINEMATIC CURTAIN
+====================== */
+
+.curtain-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Curtain halves */
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #5a0000, #a80000, #5a0000);
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.7);
+    transition: transform 2.2s cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.curtain-left {
+    left: 0;
+    border-right: 2px solid #2e0000;
+}
+
+.curtain-right {
+    right: 0;
+    border-left: 2px solid #2e0000;
+}
+
+/* Curtain button */
+.curtain-btn {
+    position: relative;
+    z-index: 6000;
+
+    padding: 16px 40px;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+
+    background: linear-gradient(135deg, #ff8fb1, #ff4f8b);
+    color: white;
+
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 35px rgba(255, 79, 139, 0.5),
+        0 0 25px rgba(255, 182, 193, 0.6);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curtain-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 45px rgba(255, 79, 139, 0.7),
+        0 0 30px rgba(255, 182, 193, 0.8);
+}
+
+/* Open animation */
+.curtain-open .curtain-left {
+    transform: translateX(-100%);
+}
+
+.curtain-open .curtain-right {
+    transform: translateX(100%);
+}
+
+.curtain-open .curtain-btn {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* ======================
+   SLIDE 1 – DIALOGUE BOX
+====================== */
+
+.dialogue {
+    margin-top: 25px;
+    padding: 22px 28px;
+
+    background: linear-gradient(135deg, #fff0f5, #ffffff);
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 30px rgba(255, 105, 180, 0.35),
+        inset 0 0 12px rgba(255, 182, 193, 0.5);
+
+    display: none;
+    text-align: center;
+    max-width: 320px;
+
+    animation: softPop 0.6s ease;
+}
+
+@keyframes softPop {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.dialogue p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #ff4f8b;
+    letter-spacing: 1px;
+}
+
+.dialogue button {
+    margin-top: 15px;
+    padding: 10px 26px;
+
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+
+    background: linear-gradient(135deg, #ff8fb1, #ff4f8b);
+    color: white;
+
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px rgba(255, 79, 139, 0.4),
+        0 0 10px rgba(255, 182, 193, 0.4);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dialogue button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 25px rgba(255, 79, 139, 0.6),
+        0 0 16px rgba(255, 182, 193, 0.6);
+}
+
+
+
+/* ======================
+   SLIDE 2
+====================== */
+#slide2 {
+    background: url("Slide2.jpg") center/cover;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100vh ;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+#letter {
+    width: 300px;
+    cursor: pointer;
+    animation: float 3s infinite ease-in-out;
+    position: relative;
+    top: 150px;
+    left: 75px;
+
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.essay {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,#ffd9ae, #ffb867);
+    opacity: 0.95;
+    padding: 30px;
+    transition: 1s;
+}
+
+.essay.show {
+    bottom: 0;
+}
+
+.essay h1 {
+    font-family: 'Playfair Display', serif;
+    color: #7e4b00;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.essay p {
+    font-family: 'Georgia', serif;
+    color: #555;
+    text-align: left;
+}
+
+/* ======================
+   SAKURA PETALS ANIMATION
+====================== */
+
+.sakura-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2; /* behind essay but above background */
+}
+
+.sakura-petal {
+    position: absolute;
+
+    width: 12px;   /* base width */
+    height: 18px;  /* taller than width for almond shape */
+
+    /* Petal color gradient: center lighter, edges darker */
+    background: radial-gradient(circle at 40% 30%, #ffe6f0, #ff4fb3);
+
+    /* Almond/teardrop petal shape */
+    border-radius: 50% 50% 60% 60% / 60% 60% 50% 50%;
+
+    /* Optional: even more control with clip-path for heart-like look */
+    clip-path: polygon(50% 0%, 80% 30%, 60% 100%, 40% 100%, 20% 30%);
+
+    opacity: 0.85;
+    transform: rotate(0deg) scale(1);
+
+    /* Animation for falling motion */
+    animation: fall linear infinite;
+
+    /* Soft shadow for depth */
+    box-shadow: 0 1px 5px rgba(255, 182, 193, 0.5);
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg) scale(1);
+        opacity: 0.85;
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg) scale(0.95) translateX(15px);
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg) scale(0.9) translateX(-15px);
+        opacity: 0;
+    }
+}
+
+
+/* ======================
+   SLIDE 3
+====================== */
+#slide3 {
+    background: radial-gradient(#bc93ff, #632ac0,#210056);
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    gap: 20px;
+}
+
+.gallery img {
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #d1b4ff;
+}
+
+#slide3 h1 {
+    margin-bottom: 20px;
+    font-size: 2.7rem;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: #c6a3ff;
+    color:#ffffff;
+    position: relative;
+    top:-50px;
+}
+
+/* ======================
+   SLIDE 4
+====================== */
+#slide4 {
+    background: radial-gradient( #353535, #121212);
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    position: absolute;
+    height: 100vh ;
+    top: 0;
+    left: 0;
+    gap: 30px;
+}
+
+#slide4 img {
+    width: 750px;
+    position: relative;
+    left:-425px;
+}
+
+.stair-text span {
+    display: block;
+    margin-left: calc(var(--i) * 45px);
+    font-size: 3.4rem;
+    font-family: 'Playfair Display', serif;
+    color: #cff5ff;
+    font-weight: bold;
+    position: relative;
+    left: -250px;
+    text-shadow:  0 0 35px #00c8ff;
+}
+
+/* ======================
+   SLIDE 5
+====================== */
+#slide5 {
+    background: radial-gradient(#ffc9c9, #ffa4a4, #ff6f6f);
+    align-items: center;
+    justify-content: center;
+}
+
+.terms {
+    width: 60%;
+    height: 300px;
+    border: 1px solid #5e0000;
+    background: linear-gradient(135deg, #ff0000 ,#ba0000);
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 0 50px #ff9191;
+    border-radius: 20px;
+}
+
+.terms p,
+.terms label {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    color: #ffffff;
+}
+
+/* ======================
+   SLIDE 6
+====================== */
+#slide6 {
+    background: linear-gradient(#ffa8bc, #ffffff);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons button {
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* YES button */
+.buttons button:first-child {
+    background: linear-gradient(135deg, #ff8fb1, #ff4f8b);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 79, 139, 0.4);
+}
+
+/* NO button */
+.buttons button:last-child {
+    background: rgba(255, 255, 255, 0.85);
+    color: #ff4f8b;
+}
+
+/* Hover effects */
+.buttons button:hover {
+    transform: translateY(-3px);
+}
+
+.valentine-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: 1.5px;
+
+    color: #8a0b31;
+    text-align: center;
+    margin-bottom: 30px;
+
+    text-shadow: 0 0 25px #ff8787;
+}
+
+.fireworks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999; /* 🔥 TOP LAYER */
+}
+
+/* Individual firework particles */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #ffffff;
+
+    filter: brightness(2.5) drop-shadow(0 0 12px currentColor);
+    animation: explode 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+
+}
+
+@keyframes explode {
+    from {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* ======================
+   CINEMATIC END SCREEN
+====================== */
+
+.final-message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Georgia', 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-style: italic;
+    
+
+    color: #ffffff;
+    text-align: center;
+
+    background: linear-gradient(#1f1f1f,#000000);
+    backdrop-filter: blur(4px);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2.5s ease;
+
+    z-index: 10;
+    text-shadow:
+        0 0 25px #ff8497,
+        0 0 30px #fe54a9,
+        0 0 25px #ff0000;
+}
+
+@keyframes floatText {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+.final-message.show {
+    opacity: 1;
+    animation: floatText 6s ease-in-out infinite;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- ======================
+     CINEMATIC CURTAIN
+====================== -->
+<div class="curtain-wrapper" id="curtainWrapper">
+    <div class="curtain curtain-left"></div>
+    <div class="curtain curtain-right"></div>
+
+    <button class="curtain-btn" id="openCurtainBtn">
+        Open My Heart 💌
+    </button>
+</div>
+
+<!-- SLIDE 1 -->
+<section id="slide1" class="slide active">
+    <img id="dog" src="husky.png">
+    <p class="caption">Press my nose</p>
+
+    <div class="dialogue" id="dialogue">
+        <p id="dogText">Woof Woof</p>
+        <button onclick="translateDog()">Translate</button>
+    </div>
+
+    <button class="next-btn">Next</button>
+    <audio src="song1.mp3" loop id="song1"></audio>
+    <audio src="bark.mp3" id="bark"></audio>
+    <audio src="bird.mp3" id="bird" loop></audio>
+</section>
+
+<!-- SLIDE 2 -->
+<section id="slide2" class="slide">
+    <img id="letter" src="letter.png">
+    <p class="caption">Press the letter</p>
+
+    <div class="sakura-container" id="sakuraContainer"></div>
+
+    <div class="essay" id="essay">
+        <h1>My Letter To You</h1>
+        <p>My Dearest Katya Sasha,
+
+It feels unreal that we’ve been talking for 409 days already. More than a year of conversations, laughter, late-night thoughts, random stories, and moments that slowly became part of my everyday life. Time passed so naturally with you that I didn’t even notice how deeply you had become someone important to me.
+
+I want to be honest with you. Before I met you, I had talked to many girls. But none of them were like you. None of them made me feel the way you do. There is something about you. your kindness, your warmth, your mind, your energy .that feels rare and magical. You didn’t just enter my life; you changed the atmosphere of it.
+
+You know about my insecurity, especially about my height. It’s something I’ve always been self-conscious about. Yet you never made me feel small. Instead, you made me feel seen, accepted, and valued exactly as I am. That means more to me than you probably realize. With you, I don’t feel judged. I feel safe. I feel enough.
+
+I also want to apologize sincerely for asking you to send your picture and for making you feel pressured in any way. I asked because I like you — maybe more than I knew how to express at the time — but that’s not an excuse to make you uncomfortable. You deserve respect, and I promise I won’t ask you again. What we have is deeper than a picture anyway. It’s connection, understanding, and the way our conversations feel like home.
+
+Somewhere between day one and day 409, my feelings grew into something undeniable. What started as simple interest turned into admiration. Admiration turned into attachment. And now, with all honesty and without fear, I can say this:
+
+I am in love with you.</p>
+    </div>
+
+    <button class="next-btn">Next</button>
+    <audio src="wind.mp3" loop id="wind"></audio>
+</section>
+
+<!-- SLIDE 3 -->
+<section id="slide3" class="slide">
+    <h1>Together forever, never apart, maybe in distance, but never in heart</h1>
+    <div class="gallery">
+        <img src="pic1.jpg">
+        <img src="pic2.png">
+        <img src="pic3.png">
+        <img src="pic4.png">
+    </div>
+
+    <button class="next-btn">Next</button>
+    <audio src="song3.mp3" loop id="song3"></audio>
+</section>
+
+<!-- SLIDE 4 -->
+<section id="slide4" class="slide">
+    <img src="jar.png">
+    <div class="stair-text">
+        <span style="--i:0">There</span>
+        <span style="--i:1">is</span>
+        <span style="--i:2">a</span>
+        <span style="--i:3">more</span>
+        <span style="--i:4">important</span>
+        <span style="--i:5">question</span>
+    </div>
+
+    <button class="next-btn">Next</button>
+</section>
+
+<!-- SLIDE 5 -->
+<section id="slide5" class="slide">
+    <div class="terms">
+        <p>TERM AND CONDITION
+            
+            1. BE HONEST with me, you should not lie to me and if you dont like me, you can say to me and i wont mind. If you like other guy and tell me because im okay with anything
+           
+           
+            2. I WONT HURT YOU, i will never touch you without your permission. and im too shy to touch you, and i wont touch you, if you okay with this you can press agree.
+           
+           
+            3. TAKE YOUR TIME WITH THE ANSWER, if youre love or like me. and thats the question i asked you on december 2 january, ik that you never say yes to me and always hate me but think and answer Katya
+          
+          
+            4. I WILL NEVER TAKE CONTROL OF YOU, your life...your rules.
+            5. I WONT BE MAD if you hate me, and if you like other guy please tell me and i wont be mad
+            6. FINAL CONFIRMATION after answering the last slide, message me so i know that. 
+        </p><br>
+        <label>
+            <input type="checkbox" onchange="agreeTerms(this)"> I Agree
+        </label>
+    </div>
+
+    <button class="next-btn">Next</button>
+</section>
+
+<!-- SLIDE 6 -->
+<section id="slide6" class="slide">
+    <h1 class="valentine-title">Will you be my Valentine?</h1>
+
+    <div class="buttons">
+        <button onclick="yes()">Yes</button>
+        <button onclick="no()">No</button>
+    </div>
+
+    <div class="fireworks" id="fireworks"></div>
+    <div class="final-message" id="finalMessage">
+        Happy Valentine’s Day Beautiful ❤️
+    </div>
+    <audio src="fireworks.mp3" id="firework" loop></audio>
+</section>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
+const nextButtons = document.querySelectorAll(".next-btn");
+const audios = document.querySelectorAll("audio");
+const audiobark = document.getElementById("bark");
+const song3 = document.getElementById("song3");
+const song1 = document.getElementById("song1");
+const bird = document.getElementById("bird");
+const wind = document.getElementById("wind");
+const firework = document.getElementById("firework");
+
+
+const dog = document.getElementById("dog");
+const dialogue = document.getElementById("dialogue");
+const letter = document.getElementById("letter");
+const essay = document.getElementById("essay");
+const fireworks = document.getElementById("fireworks");
+const curtainWrapper = document.getElementById("curtainWrapper");
+const openCurtainBtn = document.getElementById("openCurtainBtn");
+
+/* ----------------------
+    CINEMATIC CURTAIN
+----------------------- */
+openCurtainBtn.addEventListener("click", () => {
+
+    // Trigger curtain open animation
+    curtainWrapper.classList.add("curtain-open");
+
+    // Start music properly after user interaction
+    if (song1) {
+        song1.volume = 0.5;
+        song1.currentTime=20;
+        song1.play();
+    }
+    if (bird) {
+        bird.volume = 0.2;
+        bird.play();
+    }
+
+    // Remove curtain after animation completes
+    setTimeout(() => {
+        curtainWrapper.style.display = "none";
+    }, 2200);
+});
+
+
+/* --------------------
+   SLIDE CONTROL
+-------------------- */
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    /*audios.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });*/
+
+    slides[index].classList.add("active");
+
+    const btn = slides[index].querySelector(".next-btn");
+    if (btn) {
+        btn.style.display = "none";
+        setTimeout(() => btn.style.display = "block", 5000); // 5000 = 5 seconds ( default )
+    }
+}
+
+function nextSlide() {
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+
+    // Start sakura petals automatically when Slide 2 is active
+    if (slides[currentSlide].id === "slide2") {
+        startSakura();
+        if (wind) {
+            wind.volume = 0.2;
+            wind.play();
+        }
+    }
+
+    if (slides[currentSlide].id === "slide3") {
+        if (song3) {
+            bird.pause()
+            song1.pause()
+            wind.pause()
+            song3.volume = 0.05;
+            song3.play();
+        }
+    }
+}
+
+nextButtons.forEach(btn => btn.addEventListener("click", nextSlide));
+
+showSlide(0);
+
+/* Slide 1 */
+dog.addEventListener("click", () => {
+    if (audiobark) audiobark.play();
+    dialogue.style.display = "block";
+
+
+});
+
+function translateDog() {
+    document.getElementById("dogText").innerText = "أنا أحبك";
+}
+
+/* Slide 2 */
+letter.addEventListener("click", () => {
+    essay.classList.add("show");
+});
+
+function createPetal() {
+    const container = document.getElementById("sakuraContainer");
+    const petal = document.createElement("div");
+    petal.className = "sakura-petal";
+
+    // Random horizontal start position
+    petal.style.left = Math.random() * window.innerWidth + "px";
+
+    // Random size
+    petal.style.width = (Math.random() * 12 + 8) + "px"; // 8px – 20px
+    petal.style.height = (Math.random() * 18 + 12) + "px"; // 12px – 30px
+
+    // Random fall duration
+    const duration = Math.random() * 5 + 6; // 6 – 11 seconds
+    petal.style.animationDuration = duration + "s";
+
+    // Random horizontal drift
+    petal.style.transform = `rotate(${Math.random() * 360}deg) scale(${Math.random() * 0.5 + 0.8})`;
+
+    container.appendChild(petal);
+
+    // Remove petal after animation
+    setTimeout(() => {
+        petal.remove();
+    }, duration * 1000);
+}
+
+// Spawn petals continuously
+function startSakura() {
+    setInterval(createPetal, 300); // every 0.3 seconds
+}
+
+
+/* Slide 5 */
+function agreeTerms(cb) {
+    if (cb.checked) {
+        document.querySelector("#slide5 .next-btn").style.display = "block";
+    }
+}
+
+/* Slide 6 */
+function no() {
+    const btn = event.target;
+
+    btn.innerText = "Are you sure? 💕";
+    btn.style.opacity = "0.8";
+
+    btn.style.position = "absolute";
+    btn.style.left = Math.random() * 70 + "vw";
+    btn.style.top = Math.random() * 70 + "vh";
+}
+
+
+function yes() {
+    fireworks.style.display = "block";
+    launchFireworks();
+    firework.volume = 0.05;
+    firework.play();
+    song3.currentTime=30;
+
+    document.getElementById("finalMessage").classList.add("show");
+}
+
+function launchFireworks() {
+    setInterval(() => {
+        createFirework();
+    }, Math.floor(Math.random() * (750 - 300 + 1)) + 300);
+}
+
+function createFirework() {
+    const count = 45;
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight * 0.6;
+
+    for (let i = 0; i < count; i++) {
+        const particle = document.createElement("div");
+        particle.className = "firework";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 400 + 180;
+
+        particle.style.left = x + "px";
+        particle.style.top = y + "px";
+        particle.style.background = randomColor();
+        particle.style.setProperty("--x", Math.cos(angle) * distance + "px");
+        particle.style.setProperty("--y", Math.sin(angle) * distance + "px");
+
+        fireworks.appendChild(particle);
+
+        particle.addEventListener("animationend", () => {
+            particle.remove();
+        });
+    }
+}
+
+function randomColor() {
+    const colors = [
+        "#ff4f8b",
+        "#ffd700",
+        "#ff69b4",
+        "#ffffff",
+        "#ff9f1c"
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+</script>
+
+</body>
+</html>
